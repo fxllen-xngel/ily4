@@ -52,11 +52,8 @@ h1 {
 
 /* Tulip */
 .tulip {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform-origin: bottom center;
     animation: sway 3s ease-in-out infinite alternate;
+    transform-origin: bottom center;
 }
 
 /* Stem */
@@ -131,6 +128,12 @@ h1 {
 .heart::before { top: -10px; }
 .heart::after { left: -10px; }
 
+.tulip-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
 /* Animations */
 @keyframes sway {
     from { transform: rotate(-3deg); }
@@ -182,42 +185,46 @@ h1 {
 </audio>
 
 <div class="bouquet">
-
-    <div class="tulip t1">
+<div class = "tulip-wrapper t1">
+    <div class="tulip">
         <div class="stem"></div>
         <div class="petal left"></div>
         <div class="petal right"></div>
         <div class="petal center"></div>
     </div>
-
-    <div class="tulip t2">
+</div>
+<div class = "tulip-wrapper t1">
+    <div class="tulip">
         <div class="stem"></div>
         <div class="petal left"></div>
         <div class="petal right"></div>
         <div class="petal center"></div>
     </div>
-
-    <div class="tulip t3">
+</div>
+    <div class = "tulip-wrapper t3">
+    <div class="tulip">
         <div class="stem"></div>
         <div class="petal left"></div>
         <div class="petal right"></div>
         <div class="petal center"></div>
     </div>
-
-    <div class="tulip t4">
+    </div>
+    <div class = "tulip-wrapper t4">
+    <div class="tulip">
         <div class="stem"></div>
         <div class="petal left"></div>
         <div class="petal right"></div>
         <div class="petal center"></div>
     </div>
-
-    <div class="tulip t5">
+    </div>
+    <div class = "tulip-wrapper t5">
+    <div class="tulip">
         <div class="stem"></div>
         <div class="petal left"></div>
         <div class="petal right"></div>
         <div class="petal center"></div>
     </div>
-
+    </div>
 </div>
 
 <button onclick="playMusic()" class="music-btn">Play Music </button>
