@@ -150,12 +150,33 @@ h1 {
     to { opacity: 1; }
 }
 
+.music-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>For My Beautiful Wife </h1>
+<h1>For My Sweet Tangerine </h1>
+
+<audio id="bg-music" loop>
+    <source src="damiano-david-tangerine-skysoundcc_YQDCOdjO.mp3" type="audio/mpeg">
+</audio>
 
 <div class="bouquet">
 
@@ -196,6 +217,8 @@ h1 {
 
 </div>
 
+<button onclick="playMusic()" class="music-btn">Play Music </button>
+
 <div class="note">
     Since I was not able to be physically there and give you the bouquet personally, here is a bouquet of tulips for you my love<br><br>
     You are my happiness, my peace, my baby, my shona, my forever <br><br>
@@ -218,6 +241,12 @@ function createHeart() {
 }
 
 setInterval(createHeart, 500);
+
+function playMusic() {
+    const music = document.getElementById("bg-music");
+    music.play();
+    document.querySelector(".music-btn").style.display = "none";
+}
 </script>
 
 </body>
