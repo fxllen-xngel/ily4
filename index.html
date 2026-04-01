@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 🌷</title>
+
+<style>
+
+/* Reset (fixes unwanted spacing issues) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Upgrade */
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    text-align: center;
+
+    /* New aesthetic background */
+    background: radial-gradient(circle at 20% 30%, #c3d9c8, transparent 40%),
+                radial-gradient(circle at 80% 60%, #e6d3f5, transparent 40%),
+                radial-gradient(circle at 50% 90%, #f6f1e9, transparent 40%);
+    background-color: #eaf4ec;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+h1 {
+    color: black;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Bouquet Container */
+.bouquet {
+    position: relative;
+    width: 250px;
+    height: 260px;
+}
+
+/* Tulip */
+.tulip {
+    position: absolute;
+    bottom: 0;
+    animation: sway 3s ease-in-out infinite alternate;
+}
+
+/* Stem */
+.stem {
+    width: 4px;
+    height: 120px;
+    background: green;
+    margin: auto;
+}
+
+/* Petals */
+.petal {
+    width: 30px;
+    height: 40px;
+    background: #ff4d6d;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -35px;
+    left: -13px;
+}
+
+.petal.left {
+    transform: rotate(-20deg);
+    left: -20px;
+}
+
+.petal.right {
+    transform: rotate(20deg);
+    left: 0px;
+}
+
+.petal.center {
+    background: #ff758f;
+}
+
+/* Tulip Positions */
+.t1 { left: 40px; }
+.t2 { left: 90px; animation-delay: 0.5s; }
+.t3 { left: 140px; animation-delay: 1s; }
+.t4 { left: 70px; bottom: -10px; animation-delay: 1.5s; }
+.t5 { left: 120px; bottom: -10px; animation-delay: 2s; }
+
+/* Note */
+.note {
+    margin-top: 30px;
+    color: black;
+    font-size: 1.3rem;
+    padding: 0 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Hearts */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 0, 80, 0.7);
+    transform: rotate(45deg);
+    animation: floatHearts linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 0, 80, 0.7);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before { top: -10px; }
+.heart::after { left: -10px; }
+
+/* Animations */
+@keyframes sway {
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(3deg); }
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>For My Beautiful Wife </h1>
+
+<div class="bouquet">
+
+    <div class="tulip t1">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal center"></div>
+    </div>
+
+    <div class="tulip t2">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal center"></div>
+    </div>
+
+    <div class="tulip t3">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal center"></div>
+    </div>
+
+    <div class="tulip t4">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal center"></div>
+    </div>
+
+    <div class="tulip t5">
+        <div class="stem"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal center"></div>
+    </div>
+
+</div>
+
+<div class="note">
+    Since I was not able to be physically there and give you the bouquet personally, here is a bouquet of tulips for you my love<br><br>
+    You are my happiness, my peace, my baby, my shona, my forever <br><br>
+    I love you my darling!!
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
